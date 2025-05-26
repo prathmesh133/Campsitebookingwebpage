@@ -1,0 +1,40 @@
+<div class="container-fluid py-5" id="testimonials">
+    <div class="text-center mb-5">
+        <h1 class="text-light">What Our Campers Say</h1>
+        <p class="text-dark">Real experiences from our happy travelers</p>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div *ngFor="let t of testimonials; let i = index" [ngClass]="['carousel-item', i === 0 ? 'active' : '']">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                        <div class="card h-100 shadow rounded testimonial-card p-4 text-center">
+                            <p class="fst-italic">"{{ t.message }}"</p>
+                            <div class="d-flex justify-content-center align-items-center mt-3">
+                                <img [src]="t.avatar" alt="{{ t.name }}" class="rounded-circle me-3" width="60"
+                                    height="60">
+                                <div>
+                                    <h5 class="mb-0 fw-bold">{{ t.name }}</h5>
+                                    <small class="text-muted">{{ t.location }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>

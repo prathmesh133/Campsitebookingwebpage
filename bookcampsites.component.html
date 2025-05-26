@@ -1,0 +1,59 @@
+<div class="container-fluid bookcampsite text-white py-5 px-3 overflow-hidden">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 bg-white text-dark p-4 rounded shadow booking-form-wrapper">
+      <h2 class="text-center mb-4 fw-bold">Book Your Adventure</h2>
+
+      <form #bookingForm="ngForm" (ngSubmit)="submitBooking(bookingForm)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" required name="name" [(ngModel)]="formData.name">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control" required name="email" [(ngModel)]="formData.email">
+        </div>
+
+        <div class="mb-3">
+          <label for="contact" class="form-label">Contact No.:</label>
+          <input type="tel" id="contact" class="form-control" required name="contact" [(ngModel)]="formData.contact">
+        </div>
+
+        <div class="mb-3">
+          <label for="arrival" class="form-label">Arrival Date:</label>
+          <input type="date" id="arrival" class="form-control" required name="arrival" [(ngModel)]="formData.arrival">
+        </div>
+
+        <div class="mb-3">
+          <label for="departure" class="form-label">Departure Date:</label>
+          <input type="date" id="departure" class="form-control" required name="departure" [(ngModel)]="formData.departure">
+        </div>
+
+        <div class="mb-3">
+          <label for="persons" class="form-label">Number of Persons:</label>
+          <input type="number" id="persons" class="form-control" required name="persons" [(ngModel)]="formData.persons">
+        </div>
+
+        <div class="mb-4">
+          <label for="location" class="form-label">Location:</label>
+          <select id="location" class="form-select" required name="location" [(ngModel)]="formData.location">
+            <option value="Kullu Manali">Kullu Manali</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Rishikesh">Rishikesh</option>
+            <option value="Jaisalmer">Jaisalmer</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <button type="reset" class="btn btn-danger custom-btn-width">Reset</button>
+          <button type="submit" class="btn btn-success custom-btn-width">Book</button>
+        </div>
+      </form>
+
+      <div id="message" class="text-center mt-3 fw-semibold"
+           [ngClass]="{ 'text-success': isSuccess, 'text-danger': !isSuccess }">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+</div>

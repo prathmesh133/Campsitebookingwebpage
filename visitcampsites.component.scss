@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.visit-campsites {
+    background-color: #2193b0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.camping-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.camping-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.camping-section p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.camp-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .camping-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .camping-section p {
+        font-size: 0.95rem;
+    }
+
+    .camping-section img {
+        padding: 1rem 0;
+    }
+
+    .camp-img {
+        margin-top: 1rem;
+    }
+
+    .camping-section .row>div {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .camping-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .camping-section p {
+        font-size: 0.9rem;
+    }
+}

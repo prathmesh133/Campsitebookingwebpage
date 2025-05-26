@@ -1,0 +1,26 @@
+ .footer h6 {
+        cursor: pointer;
+    }
+
+    .footer h6:hover {
+        text-decoration: underline;
+    }
+
+    .media i {
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .media i:hover {
+        color: #0d6efd; 
+    }
+
+    .footer i {
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .footer i:hover {
+        color: #ffc107;
+    }

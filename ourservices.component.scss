@@ -1,0 +1,10 @@
+.container-fluid {
+    background-color: #2193b0;
+}
+
+.services-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease-in-out;
+    background-color: #2193b0;
+    border: 1px solid #b6ffb6;
+}

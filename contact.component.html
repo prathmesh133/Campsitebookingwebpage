@@ -1,0 +1,87 @@
+<div class="container-fluid contact text-white py-5 px-3 overflow-hidden">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 bg-white text-dark p-4 rounded shadow contact-form-wrapper">
+      <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
+
+
+      <div class="text-center small">
+        <i class="fa-solid fa-location-dot"></i>
+        <span class="ms-2 fw-semibold">22, Green Hills, Manali, Himachal Pradesh, India</span><br>
+
+        <i class="mt-2 fa-solid fa-envelope"></i>
+        <span class="ms-2 fw-semibold">contact&#64;campsiteindia.in</span><br>
+
+        <i class="mt-2 fa-solid fa-phone"></i>
+        <span class="ms-2 fw-semibold">+91 98765 43210</span><br>
+
+        <i class="fa-solid fa-clock"></i>
+        <span class="ms-2 fw-semibold">Working Hours: Mon - Sat | 9:00 AM to 6:00 PM</span>
+      </div>
+
+      <hr class="my-4">
+
+      <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name:</label>
+          <input type="text" id="name" class="form-control" required [(ngModel)]="formData.name" name="name">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Your Email:</label>
+          <input type="email" id="email" class="form-control" required [(ngModel)]="formData.email" name="email">
+        </div>
+
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject:</label>
+          <input type="text" id="subject" class="form-control" required [(ngModel)]="formData.subject" name="subject">
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="form-label">Message:</label>
+          <textarea id="message" rows="5" class="form-control" required [(ngModel)]="formData.message"
+            name="message"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <button type="reset" class="btn btn-danger custom-btn-width">Clear</button>
+          <button type="submit" class="btn btn-success custom-btn-width" [disabled]="!contactForm.valid">Send</button>
+        </div>
+      </form>
+
+      <div id="formMessage" class="text-center mt-3 fw-semibold"
+        [ngClass]="{ 'text-success': isSuccess, 'text-danger': isError }">
+        {{ responseMessage }}
+      </div>
+    </div>
+    <div class="container my-5" id="faq">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Frequently Asked Questions</h2>
+    <p class="text-muted">Need help? Search or browse common questions below.</p>
+  </div>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-8">
+      <input type="text" class="form-control form-control-lg" placeholder="Search FAQs..." [(ngModel)]="searchQuery">
+    </div>
+  </div>
+
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item mb-3" *ngFor="let faq of filteredFaqs; let i = index">
+      <h2 class="accordion-header" [id]="'heading' + i">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          [attr.data-bs-target]="'#collapse' + i" aria-expanded="false"
+          [attr.aria-controls]="'collapse' + i">
+          {{ faq.question }}
+        </button>
+      </h2>
+      <div [id]="'collapse' + i" class="accordion-collapse collapse"
+        [attr.aria-labelledby]="'heading' + i" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
